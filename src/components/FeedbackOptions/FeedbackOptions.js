@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({options, onLeaveFeedback}) => {
-   return (<div>
-    {options.map(option => (
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  return (
+    <div>
+      {options.map(option => (
         <button
           type="button"
           onClick={() => onLeaveFeedback(option)}
@@ -11,5 +12,11 @@ export const FeedbackOptions = ({options, onLeaveFeedback}) => {
           {option}
         </button>
       ))}
-      </div> )
-}
+    </div>
+  );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
